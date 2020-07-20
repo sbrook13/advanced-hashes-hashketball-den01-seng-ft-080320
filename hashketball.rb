@@ -172,6 +172,24 @@ def shoe_size(name)
     size
 end  
 
+# def shoe_size(name)
+#     size = 0
+#     game_hash.each do |location, team_hash|
+#       team_hash.each do |key, value|
+#         if key == :players
+#           i=0 
+#           while game_hash[location][:players][i] do
+#             if game_hash[location][:players][i][:player_name] == name 
+#               size = game_hash[location][:players][i][:shoe]
+#             end
+#             i+= 1
+#           end
+#         end  
+#       end  
+#     end
+#     size
+# end  
+
 def team_colors(team_name)
   team_colors = []
   game_hash.each do |location, team_hash|
