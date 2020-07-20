@@ -237,17 +237,17 @@ def big_shoe_rebounds
     rebounds = 0
     game_hash.each do |location, team_hash|
       team_hash.each do |key, value|
-        if key == :players
-          i=0 
-          while game_hash[location][:players][i] do
-            if game_hash[location][:players][i][:shoe] > big_shoe_points
-                big_shoe_points = game_hash[location][:players][i][:shoe]
-                rebounds = game_hash[location][:players][i][:rebounds]
-            end  
-            i+= 1
-          end
-        end
-      end  
-    end
-    rebounds
+    #     if key == :players
+    #       i=0 
+    #       while game_hash[location][:players][i] do
+    #         if game_hash[location][:players][i][:shoe] > big_shoe_points
+    #             big_shoe_points = game_hash[location][:players][i][:shoe]
+    #             rebounds = game_hash[location][:players][i][:rebounds]
+    #         end  
+    #         i+= 1
+    #       end
+    #     end
+    #   end  
+    # end
+    # rebounds
 end  
