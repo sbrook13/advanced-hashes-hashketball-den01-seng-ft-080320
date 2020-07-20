@@ -183,8 +183,8 @@ def team_colors(team_name)
   team_colors = []
   game_hash.each do |location, team_hash|
     team_hash[:team_name].each do |team|
-      if team[:team_name] == team_name 
-        team_colors = team[:colors]
+      if team_hash[:team_name] == team_name 
+        team_colors = team_hash[:colors]
       end
     end  
   end
