@@ -224,13 +224,11 @@ end
 def player_stats(name)
     stats = {}
     game_hash.each do |location, team_hash|
-      team_hash.each do |key, value|
-        team_hash[:players].each do |player|
-          if player[:player_name] == name
-            stats = player
-          end  
-        end  
-      end  
+       team_hash[:players].each do |player|
+         if player[:player_name] == name
+          stats = player
+         end  
+       end  
     end
     stats
 end 
