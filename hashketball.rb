@@ -216,16 +216,10 @@ def player_stats(name)
     stats = {}
     game_hash.each do |location, team_hash|
       team_hash.each do |key, value|
-        if key == :players
-          i=0 
-          while game_hash[location][:players][i] do
-            if game_hash[location][:players][i][:player_name] == name 
-              game_hash[location][:players][i].each do |stat, num|
-                stats[stat] = num
-              end  
-            end
-            i+= 1
-          end
+        team_hash[:players].each do |player|
+          if player[:player_name] == name
+            stats = player
+          end  
         end  
       end  
     end
@@ -247,16 +241,3 @@ def big_shoe_rebounds
     end
     rebounds
 end    
-    #     if key == :players
-    #       i=0 
-    #       while game_hash[location][:players][i] do
-    #         
-    #             rebounds = game_hash[location][:players][i][:rebounds]
-    #         end  
-    #         i+= 1
-    #       end
-    #     end
-    #   end  
-    # end
-#     rebounds
-# end  
