@@ -199,13 +199,9 @@ end
 def player_numbers(team_name)
     roster = []
     game_hash.each do |location, team_hash|
-      team_hash.each do |key, value|
-        if game_hash[location][:team_name] == team_name
-          i=0 
-          while game_hash[location][:players][i] do
-            roster << game_hash[location][:players][i][:number] 
-            i+= 1
-          end
+      if team_hash[:team_name] == team_name
+        team_hash[:players].each do |player|
+          roster << player[:number]
         end  
       end  
     end
