@@ -138,15 +138,9 @@ end
 def num_points_scored(name)
     points = 0
     game_hash.each do |location, team_hash|
-      team_hash.each do |key, value|
-        if key == :players
-          i=0 
-          while game_hash[location][:players][i] do
-            if game_hash[location][:players][i][:player_name] == name 
-              points = game_hash[location][:players][i][:points]
-            end
-            i+= 1
-          end
+      team_hash[:players].each do |player|
+        if player[:player_name] == name
+          points = player[:points]
         end  
       end  
     end
