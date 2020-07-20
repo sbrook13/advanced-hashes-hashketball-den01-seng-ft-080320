@@ -233,13 +233,20 @@ def player_stats(name)
 end 
 
 def big_shoe_rebounds
-    big_shoe_points = 0
+    big_shoe = 0
     rebounds = 0
     game_hash.each do |location, team_hash|
       team_hash.each do |key, value|
         team_hash[:players].each do |player|
            if player[:shoe] > big_shoe_points
-             big_shoe_points = game_hash[location][:players][player][:shoe]
+             big_shoe = player[:shoe]
+             rebounds = player[:rebounds]
+           end
+        end
+      end 
+    end
+    rebounds
+end    
     #     if key == :players
     #       i=0 
     #       while game_hash[location][:players][i] do
